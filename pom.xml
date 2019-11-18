@@ -142,6 +142,24 @@
                     <api_hoster>app.jelastic.servint.net</api_hoster>
                 </configuration>
             </plugin>
+            
+         <!-- Heroku Maven Plugin Configuration -->
+            <plugin>
+                  <groupId>com.heroku.sdk</groupId>
+                  <artifactId>heroku-maven-plugin</artifactId>
+                  <version>2.0.3</version>
+                  <configuration>
+                      <appName>game-of-life-application</appName>
+                      <includeTarget>false</includeTarget>
+                      <includes>
+                          <include>$target/$gameoflife-build-1.0-SNAPSHOT.jar</include>
+                      </includes>
+                      <jdkVersion>1.8</jdkVersion>
+                      <processTypes>
+                          <web>java $JAVA_OPTS -jar $target/$gameoflife-build-1.0-SNAPSHOT.jar</web>
+                      </processTypes>
+                  </configuration>
+              </plugin>
 
         </plugins>
 
