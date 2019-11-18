@@ -152,11 +152,11 @@
                       <appName>game-of-life-application</appName>
                       <includeTarget>false</includeTarget>
                       <includes>
-                          <include>$target/$gameoflife-build-1.0-SNAPSHOT.jar</include>
+                          <include>${project.build.directory}/${project.build.finalName}.jar</include>
                       </includes>
-                      <jdkVersion>1.8</jdkVersion>
+                      <jdkVersion>${java.version}</jdkVersion>
                       <processTypes>
-                          <web>java $JAVA_OPTS -jar $target/$gameoflife-build-1.0-SNAPSHOT.jar</web>
+                          <web>java $JAVA_OPTS -jar ${project.build.directory}/${project.build.finalName}.jar</web>
                       </processTypes>
                   </configuration>
               </plugin>
